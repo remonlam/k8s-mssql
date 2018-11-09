@@ -25,14 +25,14 @@ spec:
         imagePullPolicy: Always
         name: mssql
         resources:
-#          requests:
-#            cpu: 400m
-#            memory: 2G
+          requests:
+            cpu: 400m
+            memory: 2G
         env:
         - name: ACCEPT_EULA
-          value: Y
+          value: "Y"
         - name: SA_PASSWORD
-          value: Th1sI5Dop$ # <-- I know not the best place for a password, shis sould be a secret!
+          value: "Th1sI5Dop$" # <-- I know not the best place for a password, shis sould be a secret!
         volumeMounts:
         - mountPath: /var/opt/mssql # <--- mount point for dba files
           name: pvc-mssql-staging
