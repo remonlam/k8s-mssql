@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: mssql
+    env: staging
+  name: mssql
+  namespace: staging-mssql
+spec:
+  ports:
+  - port: 1433
+    protocol: TCP
+    targetPort: 1433
+  selector:
+    app: mssql
+    env: staging
+  sessionAffinity: None
+  type: NodePort
