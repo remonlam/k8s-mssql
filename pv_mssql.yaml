@@ -1,0 +1,21 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  labels:
+    app: mssql
+    env: staging
+    type: nfs
+  name: pv-mssql-staging
+spec:
+  accessModes:
+  - ReadWriteOnce
+  capacity:
+    storage: 50Gi
+  claimRef:
+    kind: PersistentVolumeClaim
+    name: pvc-mssql-staging
+    namespace: staging-mssql
+  nfs:
+    path: /volume2/k8s_staging_app_mssql/mssql
+    server: nas0.ams.c-s.io
+  persistentVolumeReclaimPolicy: Retain
