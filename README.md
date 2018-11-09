@@ -13,4 +13,5 @@ It will setup a staging environment;
 - check if container runs as a non-root user
   - it runs as root :-(
 - able to connect with the mssql studio tool
+  - yup it works!
 - create a cluster
