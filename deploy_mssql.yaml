@@ -21,7 +21,7 @@ spec:
         env: staging
     spec:
       containers:
-      - image: 
+      - image: mcr.microsoft.com/mssql/server:2017-latest
         imagePullPolicy: Always
         name: mssql
         resources:
