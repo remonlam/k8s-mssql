@@ -16,6 +16,6 @@ spec:
     name: pvc-mssql-staging
     namespace: staging-mssql
   nfs:
-    path: /volume2/k8s_staging_app_mssql/mssql # <-- make sure that the volume match your own volume name!
+    path: /volume2/k8s_staging_app_mssql # <-- make sure that the volume match your own volume name!
     server: nas0.ams.c-s.io # <-- make sure this match your own nas box!
   persistentVolumeReclaimPolicy: Retain
