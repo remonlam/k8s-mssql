@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  labels:
+    app: mssql
+    env: staging
+    name: staging-mssql
+  name: staging-mssql
