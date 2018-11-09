@@ -25,15 +25,15 @@ spec:
         imagePullPolicy: Always
         name: mssql
         resources:
-          requests:
-            cpu: 1000m
-            memory: 4G
-        volumeMounts:
-        - mountPath: /var/opt/mssql # <--- mount point for dba files
-          name: pvc-mssql-staging
+#          requests:
+#            cpu: 1000m
+#            memory: 4G
+#        volumeMounts:
+#        - mountPath: /var/opt/mssql # <--- mount point for dba files
+#          name: pvc-mssql-staging
       restartPolicy: Always
       terminationGracePeriodSeconds: 30
-      volumes:
-      - name: pvc-mssql-staging
-        persistentVolumeClaim:
-          claimName: pvc-mssql-staging
+#      volumes:
+#      - name: pvc-mssql-staging
+#        persistentVolumeClaim:
+#          claimName: pvc-mssql-staging
