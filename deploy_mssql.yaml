@@ -26,8 +26,8 @@ spec:
         name: mssql
         resources:
 #          requests:
-#            cpu: 1000m
-#            memory: 4G
+#            cpu: 400m
+#            memory: 2G
         volumeMounts:
         - mountPath: /var/opt/mssql # <--- mount point for dba files
           name: pvc-mssql-staging
