@@ -1,7 +1,7 @@
 # Microsoft SQL Server (Linux) Kubernetes deployment config
 ---
 
-This repo contains a Kubernetes deployment code for Microsoft SQL Server (Linux based).
+This repo contains a Kubernetes deployment code for Microsoft SQL Server (Linux based). <br>
 It will setup a staging environment;
 - namespace ""
 - pv "create a nfs mount point for the pvc"
