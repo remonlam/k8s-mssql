@@ -11,5 +11,6 @@ It will setup a staging environment;
 
 ## TODO;
 - check if container runs as a non-root user
+  - it runs as root :-(
 - able to connect with the mssql studio tool
 - create a cluster
