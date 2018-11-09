@@ -21,6 +21,11 @@ spec:
         env: staging
     spec:
       containers:
+      - env:
+        - name: ACCEPT_EULA
+          value: Y
+        - name: SA_PASSWORD
+          value: "Th1sI5Dop$" # <-- I know not the best place for a password, shis sould be a secret!
       - image: mcr.microsoft.com/mssql/server:2017-latest
         imagePullPolicy: Always
         name: mssql
