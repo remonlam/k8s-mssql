@@ -32,7 +32,10 @@ spec:
         - name: ACCEPT_EULA
           value: "Y"
         - name: SA_PASSWORD
-          value: "Th1sI5Dop$" # <-- I know it's not the best place for a password, this should be a secret!
+          valueFrom:
+            secretKeyRef:
+              name: sa_mssql
+              key: SA_PASSWORD
         volumeMounts:
         - mountPath: /var/opt/mssql # <--- mount point for dba files
           name: pvc-mssql-staging
