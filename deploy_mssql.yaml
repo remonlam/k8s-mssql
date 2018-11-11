@@ -34,7 +34,7 @@ spec:
         - name: SA_PASSWORD
           valueFrom:
             secretKeyRef:
-              name: sa_mssql
+              name: sa-mssql
               key: SA_PASSWORD
         volumeMounts:
         - mountPath: /var/opt/mssql # <--- mount point for dba files
