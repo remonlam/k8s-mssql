@@ -7,6 +7,7 @@ It will setup a staging environment;
 - pv "create a nfs mount point for the pvc"
 - pvc "use the pv and maps it inside the container to /var/opt/mssql"
 - svc "exports the sql port to a random NodePort"
+- secret "create a secret for the SA account"
 - deploy "the deployment code to run the MS SQL container"
 
 ## TODO;
