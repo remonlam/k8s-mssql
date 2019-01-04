@@ -1,0 +1,49 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  labels:
+    app: mssql
+    env: staging
+  name: mssql
+  namespace: staging-mssql
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: mssql
+      env: staging
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: mssql
+        env: staging
+    spec:
+      containers:
+      - env:
+        - name: ACCEPT_EULA
+          value: "Y"
+        - name: SA_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: SA_PASSWORD
+              name: mssqlsa
+        image: mcr.microsoft.com/mssql/server:2017-latest
+        imagePullPolicy: Always
+        name: mssql
+        resources:
+          requests:
+            cpu: 400m
+            memory: 2G
+        volumeMounts:
+        - mountPath: /var/opt/mssql
+          name: pvc-mssql-staging
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      volumes:
+      - name: pvc-mssql-staging
+        persistentVolumeClaim:
+          claimName: pvc-mssql-staging
